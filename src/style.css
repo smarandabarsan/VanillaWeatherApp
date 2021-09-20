@@ -1,0 +1,72 @@
+body {
+  display: block;
+  margin: 0 auto;
+}
+
+form {
+  max-width: 300px;
+}
+
+h1 {
+  font-family: "Source Code Pro", monospace;
+}
+h2 {
+  font-family: "Source Code Pro", monospace;
+}
+h3 {
+  font-family: "Source Code Pro", monospace;
+}
+
+.card-body {
+  font-family: monospace;
+  font-size: large;
+  font-weight: bold;
+}
+
+.weatherapp {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 1000px;
+  border-radius: 10px;
+  background: linear-gradient(#f1e9df, #fff);
+}
+
+.firstBox .card-body {
+  background: linear-gradient(#cbc3e3, #fff);
+  font-family: "Source Code Pro", monospace;
+  border-radius: 10px;
+  text-align: center;
+}
+.weekdays .row .card-body {
+  background: linear-gradient(#d2c8d7, #fff);
+}
+
+.buttons {
+  font-family: "Source Code Pro", monospace;
+  padding-block: 10px;
+  border-color: lightgray;
+  border-width: 1px;
+  border-radius: 10px;
+  background: linear-gradient(lightgray, white);
+  margin: 5px;
+}
+.currentLocation {
+  font-family: "Source Code Pro", monospace;
+  padding-block: 10px;
+  border-color: lightgray;
+  border-width: 1px;
+  border-radius: 10px;
+  background: linear-gradient(lightgreen, white);
+  margin: 5px;
+  padding: 10px;
+}
+.search {
+  font-family: "Source Code Pro", monospace;
+  padding-block: 10px;
+  border-color: lightgray;
+  border-width: 1px;
+  border-radius: 10px;
+  background: white;
+  margin: 5px;
+}
