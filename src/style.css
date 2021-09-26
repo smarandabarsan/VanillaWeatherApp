@@ -32,6 +32,17 @@ h3 {
   background: linear-gradient(#f1e9df, #fff);
 }
 
+.credits {
+  border: 1px solid #c0c7d1;
+  padding: 15px;
+  margin: 20px auto;
+  max-width: 1000px;
+  border-radius: 10px;
+  background: linear-gradient(#c0c7d1, #fff);
+  font-size: small;
+  text-align: center;
+}
+
 .firstBox .card-body {
   background: linear-gradient(#cbc3e3, #fff);
   font-family: "Source Code Pro", monospace;
