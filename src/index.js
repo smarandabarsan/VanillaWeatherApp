@@ -1,17 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import "bootstrap/dist/css/bootstrap.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-
-ReactDOM.render(<App />, document.getElementById("root"));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
-
 function formatDate(date) {
   let hours = date.getHours();
   if (hours < 10) {
@@ -37,22 +23,24 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function showTemperature(response) {
+function displayTemperature(response) {
     let temperature = Math.round(response.data.main.temp);
     /*let replacement = `It is ${temperature} degrees in ${response.data.name}`;*/
     let tempElement = document.querySelector("#temperature");
     tempElement.innerHTML = `${temperature}°C`;
+    
+    let cityInput = document.querySelector("#city-input");
+    let city = cityInput.value;
+    h1.innerHTML = cityInput.value;
+
+
 }
 
 function search(event) {
   event.preventDefault();
-  let h1 = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-input");
-  let city = cityInput.value;
   let apiKey = "0bb8555244f293e8769ef2e2d96d1767";
   let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-  h1.innerHTML = cityInput.value;
-  axios.get(urlApi).then(showTemperature);
+  axios.get(urlApi).then(displayTemperature);
   console.log(urlApi);
 }
 
@@ -97,16 +85,9 @@ dateElement.innerHTML = formatDate(currentTime);
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-
-
 // Bonus Feature
 /*let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);*/
-
-
-
-
-
