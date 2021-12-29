@@ -16,15 +16,13 @@
     
 </head>
 
-<body cz-shortcut-listen="true">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-
+<body>
     <div id="root">
         <div class="App">
             <div class="container">
                 <div class="Weather">
-                    <a href="http://"></a>
-                    <form action="">
+                    <img src="images/logo.png" alt="SheCodes" href="http://shecodes.io">
+                    <form id="search-form">
                         <div class="row">
                             <div class="col-9">
                                 <input 
@@ -35,7 +33,7 @@
                                 autocomplete="off">
                             </div>
                             <div class="col-3 p-0">
-                                <input type="submit" class="btn btn-primary w-100" value="Search" name="" id="">
+                                <input type="submit" class="btn btn-primary w-100" value="Search" name="">
                             </div>
                         </div>
                     </form>
@@ -45,34 +43,25 @@
                                 <h1 id="city">New York</h1>
                                 <ul>
                                     <li>
-                                        <span>
-                                            "Monday"
-                                            "17"
-                                            ":"
-                                            "44"
-                                        </span>
-                                        ","
-                                        "clear sky"
+                                        <span id="date"></span>
+                                        ,
+                                        <strong id="description">clear sky</strong>
                                     </li>
                                     <li>
-                                        "Humidity: "
-                                        <strong id="humidity">
-                                            "46"
-                                            "%"
-                                        </strong>
-                                        ", Wind:"
-                                        <strong id="wind">
-                                            "0.89"
-                                            "km/h"
-                                        </strong>
+                                        Humidity: 
+                                        <strong id="humidity"></strong>
+                                        %, Wind:
+                                        <strong id="wind"></strong>
+                                            km/h
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-6">
                                 <div class="temperature-container d-flex justify-content-end">
                                     <canvas width="52" height="52"></canvas>
+                                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Clear" id="icon">
                                     <div>
-                                        <span class="temperature">17</span>
+                                        <span class="temperature" id="temperature">17</span>
                                         <span class="unit">°C</span>
                                     </div>
                                 </div>
@@ -148,6 +137,6 @@
         </div>
 
     </div>
-    
+    <script src="src/index.js"></script>
 </body>
 </html>

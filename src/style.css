@@ -104,6 +104,7 @@ body {
 .Weather li strong {
   color: #f65282;
   font-weight: normal;
+  text-transform: capitalize;
 }
 
 .Weather .temperature {
