@@ -32,6 +32,8 @@ function displayTemperature(response) {
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
 
+    celsiusTemperature = response.data.main.temp;
+
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
@@ -43,13 +45,6 @@ function displayTemperature(response) {
     
 }
 
-function handleSubmit(event) {
-  event.preventDefault();
-  let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
-  console.log(cityInputElement.value);   
-}
-
 function search(city) {
     let apiKey = "0bb8555244f293e8769ef2e2d96d1767";
     let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -57,7 +52,37 @@ function search(city) {
    
 }
 
-search("New York");
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);   
+}
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 // Feature Submit-Button
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);

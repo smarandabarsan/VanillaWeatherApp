@@ -183,3 +183,11 @@ body {
 .WeatherInfo .temperature-container {
   margin-top: 30px;
 }
+
+.WeatherInfo .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+.WeatherInfo .active:hover {
+  text-decoration: none;
+}
